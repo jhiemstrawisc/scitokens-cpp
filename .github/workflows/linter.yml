@@ -20,6 +20,8 @@ jobs:
         with:
           style: file
           extensions: 'c,h,C,H,cpp,hpp,cc,hh,c++,h++,cxx,hxx'
+          lines-change-only: true
+          
 
       - name: Fail fast?!
         if: steps.linter.outputs.checks-failed > 0
