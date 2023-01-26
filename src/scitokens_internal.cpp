@@ -5,6 +5,9 @@
 
 #include <curl/curl.h>
 #include <jwt-cpp/base.h>
+
+
+
 #include <jwt-cpp/jwt.h>
 #include <picojson/picojson.h>
 #include <openssl/bn.h>
@@ -18,7 +21,9 @@
 
 #include "scitokens_internal.h"
 
-using namespace scitokens;
+using namespace scitokens
+
+;
 
 namespace {
 
@@ -158,12 +163,15 @@ get_metadata_endpoint(const std::string &issuer, std::string &openid_metadata, s
     }
     if (path == "/")
     {
-        path = "";
+        path = ""
+        ;
     }
     std::string new_path = "/.well-known/oauth-authorization-server" + path;
     oauth_metadata = "https://" + netloc + new_path;
 
-    openid_metadata = issuer + "/.well-known/openid-configuration";
+    openid_metadata = issuer + "/.well-known/openid-configuration"  ;
+
+
 }
 
 /*

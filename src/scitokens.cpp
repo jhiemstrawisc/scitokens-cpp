@@ -11,6 +11,13 @@ SciTokenKey scitoken_key_create(const char *key_id, const char *alg, const char 
         if (err_msg) {*err_msg = strdup("Key ID cannot be NULL.");}
         return nullptr;
     }
+
+
+
+
+
+
+
     if (alg == nullptr) {
         if (err_msg) {*err_msg = strdup("Algorithm cannot be NULL.");}
         return nullptr;
@@ -26,7 +33,9 @@ SciTokenKey scitoken_key_create(const char *key_id, const char *alg, const char 
     return new scitokens::SciTokenKey(key_id, alg, public_contents, private_contents);
 }
 
-void scitoken_key_destroy(SciTokenKey token) {
+void scitoken_key_destroy(SciTokenKey token) 
+
+{
     scitokens::SciTokenKey *real_token = reinterpret_cast<scitokens::SciTokenKey*>(token);
     delete real_token;
 }
@@ -67,7 +76,9 @@ int scitoken_set_claim_string(SciToken token, const char *key, const char *value
 }
 
 
-void scitoken_set_serialize_profile(SciToken token, SciTokenProfile profile) {
+void scitoken_set_serialize_profile(SciToken token, SciTokenProfile profile) 
+
+{
     scitoken_set_serialize_mode(token, profile);
 }
 
