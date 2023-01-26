@@ -25,5 +25,6 @@ jobs:
       - name: Run linters
         uses: wearerequired/lint-action@v2
         with:
+          github_token: ${{ secrets.github_token }}
           clang_format: true
           clang_format_auto_fix: true
