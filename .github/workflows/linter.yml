@@ -20,7 +20,7 @@ jobs:
         with:
           style: file
           extensions: 'c,h,C,H,cpp,hpp,cc,hh,c++,h++,cxx,hxx'
-          lines-changed-only: true
+          lines-changed-only: false
 
 
       - name: Fail fast?!
