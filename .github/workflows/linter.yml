@@ -6,16 +6,9 @@ on:
   push:
     branches:
       - linter
-  # Replace pull_request with pull_request_target if you
-  # plan to use this action with forks, see the Limitations section
   pull_request:
     branches:
       - main
-
-# Down scope as necessary via https://docs.github.com/en/actions/security-guides/automatic-token-authentication#modifying-the-permissions-for-the-github_token
-permissions:
-  checks: write
-  contents: write
 
 jobs:
   run-linters:
@@ -26,12 +19,12 @@ jobs:
       - name: Check out Git repository
         uses: actions/checkout@v2
 
-      # Install your linters here
       - name: Install ClangFormat
-      - run: sudo apt-get install -y clang-format
+        run: sudo apt-get install -y clang-format
 
       - name: Run linters
         uses: wearerequired/lint-action@v2
         with:
-          # Enable your linters here
-          clang_format = true
+          clang_format: true
+          auto_fix: true
+          
