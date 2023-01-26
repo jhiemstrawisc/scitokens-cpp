@@ -28,3 +28,5 @@ jobs:
           github_token: ${{ secrets.github_token }}
           clang_format: true
           clang_format_auto_fix: true
+          commit: true
+          continue_on_error: true
