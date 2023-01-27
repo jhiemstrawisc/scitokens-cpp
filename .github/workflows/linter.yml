@@ -3,8 +3,8 @@ name: Lint
 on:
   # Trigger the workflow on push or pull request,
   # but only for the main branch
-  push:
-    branches:
+  # push:
+  #   branches: # Leaving this blank causes a linter run to occur on push for all branches.
   pull_request:
     branches:
       - linter_merge
