@@ -28,7 +28,8 @@ jobs:
           clang_format: true
           clang_format_auto_fix: true
           auto_fix: true
-          commit: true
+          commit: true 
           continue_on_error: false
+          git_email: ${github.event.commits[0].author.name}
 
 
