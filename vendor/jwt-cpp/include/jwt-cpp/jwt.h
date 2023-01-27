@@ -521,8 +521,8 @@ inline std::string extract_pubkey_from_cert(const std::string &certstr,
  * \param cert_base64_der_str 	String containing the certificate encoded as
  * base64 DER
  * \param decode 				The function to decode the cert
- * \param ec					error_code for error_detection (gets
- * cleared if no error occures)
+ * \param ec					error_code for error_detection
+ * (gets cleared if no error occures)
  */
 template <typename Decode>
 std::string convert_base64_der_to_pem(const std::string &cert_base64_der_str,
@@ -568,8 +568,8 @@ std::string convert_base64_der_to_pem(const std::string &cert_base64_der_str,
  * \param cert_base64_der_str 	String containing the certificate encoded as
  * base64 DER
  * \param decode 				The function to decode the cert
- * \throw						rsa_exception if an error
- * occurred
+ * \throw						rsa_exception if an
+ * error occurred
  */
 template <typename Decode>
 std::string convert_base64_der_to_pem(const std::string &cert_base64_der_str,
@@ -589,8 +589,8 @@ std::string convert_base64_der_to_pem(const std::string &cert_base64_der_str,
  *
  * \param cert_base64_der_str 	String containing the certificate encoded as
  * base64 DER
- * \param ec					error_code for error_detection (gets
- * cleared if no error occures)
+ * \param ec					error_code for error_detection
+ * (gets cleared if no error occures)
  */
 inline std::string
 convert_base64_der_to_pem(const std::string &cert_base64_der_str,
@@ -609,8 +609,8 @@ convert_base64_der_to_pem(const std::string &cert_base64_der_str,
  *
  * \param cert_base64_der_str 	String containing the certificate encoded as
  * base64 DER
- * \throw						rsa_exception if an error
- * occurred
+ * \throw						rsa_exception if an
+ * error occurred
  */
 inline std::string
 convert_base64_der_to_pem(const std::string &cert_base64_der_str) {
@@ -659,9 +659,10 @@ load_public_key_from_string(const std::string &key, const std::string &password,
   }
 
   std::shared_ptr<EVP_PKEY> pkey(
-      PEM_read_bio_PUBKEY(pubkey_bio.get(), nullptr, nullptr,
-                          (void *)password.data()), // NOLINT(google-readability-casting)
-                                                    // requires `const_cast`
+      PEM_read_bio_PUBKEY(
+          pubkey_bio.get(), nullptr, nullptr,
+          (void *)password.data()), // NOLINT(google-readability-casting)
+                                    // requires `const_cast`
       EVP_PKEY_free);
   if (!pkey) {
     ec = error::rsa_error::load_key_bio_read;
@@ -777,9 +778,10 @@ inline std::shared_ptr<EVP_PKEY> load_public_ec_key_from_string(
   }
 
   std::shared_ptr<EVP_PKEY> pkey(
-      PEM_read_bio_PUBKEY(pubkey_bio.get(), nullptr, nullptr,
-                          (void *)password.data()), // NOLINT(google-readability-casting)
-                                                    // requires `const_cast`
+      PEM_read_bio_PUBKEY(
+          pubkey_bio.get(), nullptr, nullptr,
+          (void *)password.data()), // NOLINT(google-readability-casting)
+                                    // requires `const_cast`
       EVP_PKEY_free);
   if (!pkey) {
     ec = error::ecdsa_error::load_key_bio_read;
@@ -871,8 +873,9 @@ inline
 #endif
 {
   std::string res(BN_num_bytes(bn), '\0');
-  BN_bn2bin(bn, (unsigned char *)res.data()); // NOLINT(google-readability-casting)
-                                              // requires `const_cast`
+  BN_bn2bin(bn,
+            (unsigned char *)res.data()); // NOLINT(google-readability-casting)
+                                          // requires `const_cast`
   return res;
 }
 /**
