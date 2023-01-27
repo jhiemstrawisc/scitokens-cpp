@@ -30,6 +30,6 @@ jobs:
           auto_fix: true
           commit: true 
           continue_on_error: false
-          git_email: ${github.event.commits[0].author.name}
+          git_email: github.event.commits[0].author.name
 
 
