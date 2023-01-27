@@ -19,9 +19,19 @@
 
 #include "scitokens_internal.h"
 
-using namespace scitokens
+using namespace scitokens;
 
-    ;
+
+
+
+
+
+
+
+
+
+
+
 
 namespace {
 
