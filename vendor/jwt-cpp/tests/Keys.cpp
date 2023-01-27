@@ -1,7 +1,7 @@
 #include <string>
 
 namespace test_keys {
-	std::string rsa_priv_key = R"(-----BEGIN PRIVATE KEY-----
+std::string rsa_priv_key = R"(-----BEGIN PRIVATE KEY-----
 MIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQC4ZtdaIrd1BPIJ
 tfnF0TjIK5inQAXZ3XlCrUlJdP+XHwIRxdv1FsN12XyMYO/6ymLmo9ryoQeIrsXB
 XYqlET3zfAY+diwCb0HEsVvhisthwMU4gZQu6TYW2s9LnXZB5rVtcBK69hcSlA2k
@@ -29,7 +29,7 @@ RultUEe2C0jYMDQx+JYxbPmtcopvZQrFEur3WKVuLy5UAy7EBvwMnZwIG7OOohJb
 vkSpADK6VPn9lbqq7O8cTedEHttm6otmLt8ZyEl3hZMaL3hbuRj6ysjmoFKx6CrX
 rK0/Ikt5ybqUzKCMJZg2VKGTxg==
 -----END PRIVATE KEY-----)";
-	std::string rsa_pub_key = R"(-----BEGIN PUBLIC KEY-----
+std::string rsa_pub_key = R"(-----BEGIN PUBLIC KEY-----
 MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuGbXWiK3dQTyCbX5xdE4
 yCuYp0AF2d15Qq1JSXT/lx8CEcXb9RbDddl8jGDv+spi5qPa8qEHiK7FwV2KpRE9
 83wGPnYsAm9BxLFb4YrLYcDFOIGULuk2FtrPS512Qea1bXASuvYXEpQNpGbnTGVs
@@ -38,7 +38,7 @@ WXI9C+yjHztqyL2h8P6mlThPY9E9ue2fCqdgixfTFIF9Dm4SLHbphUS2iw7w1JgT
 AziMCxS+VrRPDM+zfvpIJg3JljAh3PJHDiLu902v9w+Iplu1WyoB2aPfitxEhRN0
 YwIDAQAB
 -----END PUBLIC KEY-----)";
-	std::string rsa_pub_key_invalid = R"(-----BEGIN PUBLIC KEY-----
+std::string rsa_pub_key_invalid = R"(-----BEGIN PUBLIC KEY-----
 MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxzYuc22QSst/dS7geYYK
 5l5kLxU0tayNdixkEQ17ix+CUcUbKIsnyftZxaCYT46rQtXgCaYRdJcbB3hmyrOa
 vkhTpX79xJZnQmfuamMbZBqitvscxW9zRR9tBUL6vdi/0rpoUwPMEh8+Bw7CgYR0
@@ -47,7 +47,7 @@ VTr4+KEY+IeLvubHVmLUhbE5NgWXxrRpGasDqzKhCTmsa2Ysf712rl57SlH0Wz/M
 r3F7aM9YpErzeYLrl0GhQr9BVJxOvXcVd4kmY+XkiCcrkyS1cnghnllh+LCwQu1s
 YwIDAQAB
 -----END PUBLIC KEY-----)";
-	std::string rsa512_priv_key = R"(-----BEGIN RSA PRIVATE KEY-----
+std::string rsa512_priv_key = R"(-----BEGIN RSA PRIVATE KEY-----
 MIICWwIBAAKBgQDdlatRjRjogo3WojgGHFHYLugdUWAY9iR3fy4arWNA1KoS8kVw
 33cJibXr8bvwUAUparCwlvdbH6dvEOfou0/gCFQsHUfQrSDv+MuSUMAe8jzKE4qW
 +jK+xQU9a03GUnKHkkle+Q0pX/g6jXZ7r1/xAK5Do2kQ+X5xK9cipRgEKwIDAQAB
@@ -62,13 +62,13 @@ fSSjAkLRi54PKJ8TFUeOP15h9sQzydI8zJU+upvDEKZsZc/UhT/SySDOxQ4G/523
 Y0sz/OZtSWcol/UMgQJALesy++GdvoIDLfJX5GBQpuFgFenRiRDabxrE9MNUZ2aP
 FaFp+DyAe+b4nDwuJaW2LURbr8AEZga7oQj0uYxcYw==
 -----END RSA PRIVATE KEY-----)";
-	std::string rsa512_pub_key = R"(-----BEGIN PUBLIC KEY-----
+std::string rsa512_pub_key = R"(-----BEGIN PUBLIC KEY-----
 MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDdlatRjRjogo3WojgGHFHYLugd
 UWAY9iR3fy4arWNA1KoS8kVw33cJibXr8bvwUAUparCwlvdbH6dvEOfou0/gCFQs
 HUfQrSDv+MuSUMAe8jzKE4qW+jK+xQU9a03GUnKHkkle+Q0pX/g6jXZ7r1/xAK5D
 o2kQ+X5xK9cipRgEKwIDAQAB
 -----END PUBLIC KEY-----)";
-	std::string rsa512_pub_key_invalid = R"(-----BEGIN PUBLIC KEY-----
+std::string rsa512_pub_key_invalid = R"(-----BEGIN PUBLIC KEY-----
 MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxzYuc22QSst/dS7geYYK
 5l5kLxU0tayNdixkEQ17ix+CUcUbKIsnyftZxaCYT46rQtXgCaYRdJcbB3hmyrOa
 vkhTpX79xJZnQmfuamMbZBqitvscxW9zRR9tBUL6vdi/0rpoUwPMEh8+Bw7CgYR0
@@ -77,55 +77,55 @@ VTr4+KEY+IeLvubHVmLUhbE5NgWXxrRpGasDqzKhCTmsa2Ysf712rl57SlH0Wz/M
 r3F7aM9YpErzeYLrl0GhQr9BVJxOvXcVd4kmY+XkiCcrkyS1cnghnllh+LCwQu1s
 YwIDAQAB
 -----END PUBLIC KEY-----)";
-	std::string ecdsa521_priv_key = R"(-----BEGIN EC PRIVATE KEY-----
+std::string ecdsa521_priv_key = R"(-----BEGIN EC PRIVATE KEY-----
 MIHcAgEBBEIAuZxTZjLIZM5hxgZX+JRrqt5FKpAEg/meZ7m9aSE3XbRITqtfz1Uy
 h2Srn7o8+4j/jQpwHTTHZThy10u5jMjaR+mgBwYFK4EEACOhgYkDgYYABAFFah0k
 6m4ddp/tUN/ObrKKwSCp4QUZdiAMaC9eY1HyNBPuuEsH5qCfeY5lmeJwSUpzCosn
 rgW8M2hQ4Kr5V9OXrgHLA5WVtH6//sSkUY2/xYuqc7/Ln8gI5ddtr1qG64Xtgs05
 /CNajSjFZeLm76llakvYiBTTH/ii8hIfrwukW9IP7Q==
 -----END EC PRIVATE KEY-----)";
-	std::string ecdsa521_pub_key = R"(-----BEGIN PUBLIC KEY-----
+std::string ecdsa521_pub_key = R"(-----BEGIN PUBLIC KEY-----
 MIGbMBAGByqGSM49AgEGBSuBBAAjA4GGAAQBRWodJOpuHXaf7VDfzm6yisEgqeEF
 GXYgDGgvXmNR8jQT7rhLB+agn3mOZZnicElKcwqLJ64FvDNoUOCq+VfTl64BywOV
 lbR+v/7EpFGNv8WLqnO/y5/ICOXXba9ahuuF7YLNOfwjWo0oxWXi5u+pZWpL2IgU
 0x/4ovISH68LpFvSD+0=
 -----END PUBLIC KEY-----)";
-	std::string ecdsa521_pub_key_invalid = R"(-----BEGIN PUBLIC KEY-----
+std::string ecdsa521_pub_key_invalid = R"(-----BEGIN PUBLIC KEY-----
 MIGbMBAGByqGSM49AgEGBSuBBAAjA4GGAAQB3l84szH3VOII+Qp4TGgRqCps1q7N
 /41ucX90sVKT+6Z2FgYqGsfDcViWBdcjRQLL69LGApcvGGSa1MiYXmLWBYAAKriR
 7S63iNLzarnq1WnCH+GowDMl127CPoSW4LmMqV5rJLJQNwfiy+N0wph/Adnqqb+6
 w1N7aVXutqCx02T/jrQ=
 -----END PUBLIC KEY-----)";
-	std::string ecdsa384_priv_key = R"(-----BEGIN EC PRIVATE KEY-----
+std::string ecdsa384_priv_key = R"(-----BEGIN EC PRIVATE KEY-----
 MIGkAgEBBDCrPXJDgQDtNRpM0qNUW/zN1vrCvOVH1CsItVZ+1NeGB+w/2whnIXJQ
 K7U5C1ETPHagBwYFK4EEACKhZANiAAR0JjvVJXc3u1I/7vt5mxzPtAIi1VIqxCwN
 wgISZVySTYZQzyicW2GfhMlFCow28LzqTwH/eCymAvnTAmpK/P1hXhNcnxDBZNOU
 WMbMLFcQrg2wwpIb/k/IXobNwjNPRBo=
 -----END EC PRIVATE KEY-----)";
-	std::string ecdsa384_pub_key = R"(-----BEGIN PUBLIC KEY-----
+std::string ecdsa384_pub_key = R"(-----BEGIN PUBLIC KEY-----
 MHYwEAYHKoZIzj0CAQYFK4EEACIDYgAEdCY71SV3N7tSP+77eZscz7QCItVSKsQs
 DcICEmVckk2GUM8onFthn4TJRQqMNvC86k8B/3gspgL50wJqSvz9YV4TXJ8QwWTT
 lFjGzCxXEK4NsMKSG/5PyF6GzcIzT0Qa
 -----END PUBLIC KEY-----)";
-	std::string ecdsa384_pub_key_invalid = R"(-----BEGIN PUBLIC KEY-----
+std::string ecdsa384_pub_key_invalid = R"(-----BEGIN PUBLIC KEY-----
 MHYwEAYHKoZIzj0CAQYFK4EEACIDYgAE7TAJMuqdY9JYXrv2p06bXhLmRddkCQZ6
 4BJeTNGz59QqbHk5+6avGj2lXK+c9rr0vejbts5A50WF1E4b7ItLxEIONfSbF74Q
 sQ4dg7kzXiz+XX/aEVqH1HlIa9YAJPaH
 -----END PUBLIC KEY-----)";
-	std::string ecdsa256_priv_key = R"(-----BEGIN PRIVATE KEY-----
+std::string ecdsa256_priv_key = R"(-----BEGIN PRIVATE KEY-----
 MIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgPGJGAm4X1fvBuC1z
 SpO/4Izx6PXfNMaiKaS5RUkFqEGhRANCAARCBvmeksd3QGTrVs2eMrrfa7CYF+sX
 sjyGg+Bo5mPKGH4Gs8M7oIvoP9pb/I85tdebtKlmiCZHAZE5w4DfJSV6
 -----END PRIVATE KEY-----)";
-	std::string ecdsa256_pub_key = R"(-----BEGIN PUBLIC KEY-----
+std::string ecdsa256_pub_key = R"(-----BEGIN PUBLIC KEY-----
 MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEQgb5npLHd0Bk61bNnjK632uwmBfr
 F7I8hoPgaOZjyhh+BrPDO6CL6D/aW/yPObXXm7SpZogmRwGROcOA3yUleg==
 -----END PUBLIC KEY-----)";
-	std::string ecdsa256_pub_key_invalid = R"(-----BEGIN PUBLIC KEY-----
+std::string ecdsa256_pub_key_invalid = R"(-----BEGIN PUBLIC KEY-----
 MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEoBUyo8CQAFPeYPvv78ylh5MwFZjT
 CLQeb042TjiMJxG+9DLFmRSMlBQ9T/RsLLc+PmpB1+7yPAR+oR5gZn3kJQ==
 -----END PUBLIC KEY-----)";
-	std::string ecdsa256_certificate = R"(-----BEGIN CERTIFICATE-----
+std::string ecdsa256_certificate = R"(-----BEGIN CERTIFICATE-----
 MIIB3zCCAYWgAwIBAgIUXns6sbspahSWU4TRQssO3NLmDr0wCgYIKoZIzj0EAwIw
 RTELMAkGA1UEBhMCQVUxEzARBgNVBAgMClNvbWUtU3RhdGUxITAfBgNVBAoMGElu
 dGVybmV0IFdpZGdpdHMgUHR5IEx0ZDAeFw0yMDA3MjAyMTA4NTlaFw0yMTA3MjAy
@@ -138,16 +138,16 @@ VR0TAQH/BAUwAwEB/zAKBggqhkjOPQQDAgNIADBFAiEAv2rcDBD4p/UeJIEFOK9j
 o4XKKbXs6oqMpkEDUinf6DACIGPcShH4m5haelZleORWM068C3BSVToRMSAivE79
 8ZhX
 -----END CERTIFICATE-----)";
-	std::string ed25519_priv_key = R"(-----BEGIN PRIVATE KEY-----
+std::string ed25519_priv_key = R"(-----BEGIN PRIVATE KEY-----
 MC4CAQAwBQYDK2VwBCIEIP7pYCi8Xipwjttw6ehj0PNrsg3K1Vc5RBqAG5JePqsm
 -----END PRIVATE KEY-----)";
-	std::string ed25519_pub_key = R"(-----BEGIN PUBLIC KEY-----
+std::string ed25519_pub_key = R"(-----BEGIN PUBLIC KEY-----
 MCowBQYDK2VwAyEAJHsGwkQLdwqaqp2Ar39YtLCVHiWgUPcGwQfes2cUOEc=
 -----END PUBLIC KEY-----)";
-	std::string ed25519_pub_key_invalid = R"(-----BEGIN PUBLIC KEY-----
+std::string ed25519_pub_key_invalid = R"(-----BEGIN PUBLIC KEY-----
 MCowBQYDK2VwAyEAJHsGwkQLdwqaqp2Ar39YtLCVHIwGupcGwQfes2cUOEc=
 -----END PUBLIC KEY-----)";
-	std::string ed25519_certificate = R"(-----BEGIN CERTIFICATE-----
+std::string ed25519_certificate = R"(-----BEGIN CERTIFICATE-----
 MIIBjzCCAUECFCQlWQxMEMe4c3OOimH4/y+o/HpfMAUGAytlcDBqMQswCQYDVQQG
 EwJDQTEPMA0GA1UECAwGUXVlYmVjMREwDwYDVQQHDAhNb250cmVhbDEQMA4GA1UE
 CgwHand0LWNwcDEPMA0GA1UECwwGZ2l0aHViMRQwEgYDVQQDDAtleGFtcGxlLmNv
@@ -158,19 +158,19 @@ BQYDK2VwAyEAUdLe1SUWxc/95f39pfmuwe1SLHpFXf5gcRQlMH2sjgwwBQYDK2Vw
 A0EAezYcLIUnyy86uUnAZdAMPn7wTruNKtG36GrTF3PF4dtdoGF1OV5DLnNK0Hbs
 3GyYtaZs6AEHwDXl/INXu2zoCQ==
 -----END CERTIFICATE-----)";
-	std::string ed448_priv_key = R"(-----BEGIN PRIVATE KEY-----
+std::string ed448_priv_key = R"(-----BEGIN PRIVATE KEY-----
 MEcCAQAwBQYDK2VxBDsEOZNyV4kIWehIWSsPCnDEZbBF+g2WoUgUwox8eQJTq8Hz
 y4okU+JZAV8RqQ270fJL/Safvvc1SbbF1A==
 -----END PRIVATE KEY-----)";
-	std::string ed448_pub_key = R"(-----BEGIN PUBLIC KEY-----
+std::string ed448_pub_key = R"(-----BEGIN PUBLIC KEY-----
 MEMwBQYDK2VxAzoAQomzAH8FXc0rhznaLR9DYwe5+DNhP0UwpZzS5y6iJ/iirrzI
 9/Fjbc/UvFxwFKFw8IJ9QUwFsE8A
 -----END PUBLIC KEY-----)";
-	std::string ed448_pub_key_invalid = R"(-----BEGIN PUBLIC KEY-----
+std::string ed448_pub_key_invalid = R"(-----BEGIN PUBLIC KEY-----
 MEMwBQYDK2VxAzoAQomzAH8FXc0rhznaLR9DYwe5+DNhP0UwpZzS5y6iJ/iirrzI
 9/Fjbc/UvFxwFKFW7ij8QUwFsE8A
 -----END PUBLIC KEY-----)";
-	std::string sample_cert = R"(-----BEGIN CERTIFICATE-----
+std::string sample_cert = R"(-----BEGIN CERTIFICATE-----
 MIIDHDCCAgSgAwIBAgIIGlbUz5cvweUwDQYJKoZIhvcNAQEFBQAwMTEvMC0GA1UE
 AxMmc2VjdXJldG9rZW4uc3lzdGVtLmdzZXJ2aWNlYWNjb3VudC5jb20wHhcNMTkw
 NDEwMjEyMDUxWhcNMTkwNDI3MDkzNTUxWjAxMS8wLQYDVQQDEyZzZWN1cmV0b2tl
@@ -190,24 +190,25 @@ ftcs6dibdnbQtbX6o9E+KuvGHoNW5xcSjX8lwXTpopfvufPOLPcnFXi4UoYZ8NZ2
 flE/m/0zymX8I/Xu3+KKLhUnUROGC6zO3OnLHXCnEns=
 -----END CERTIFICATE-----
 )";
-	std::string sample_cert_base64_der = "MIIDHDCCAgSgAwIBAgIIGlbUz5cvweUwDQYJKoZIhvcNAQEFBQAwMTEvMC0GA1UE"
-										 "AxMmc2VjdXJldG9rZW4uc3lzdGVtLmdzZXJ2aWNlYWNjb3VudC5jb20wHhcNMTkw"
-										 "NDEwMjEyMDUxWhcNMTkwNDI3MDkzNTUxWjAxMS8wLQYDVQQDEyZzZWN1cmV0b2tl"
-										 "bi5zeXN0ZW0uZ3NlcnZpY2VhY2NvdW50LmNvbTCCASIwDQYJKoZIhvcNAQEBBQAD"
-										 "ggEPADCCAQoCggEBALRPFSsUi/bGcMVkD+XjJ6z/71u+7Wn1C1bRnM9sU3q7+Ere"
-										 "DV6an+z+YsjblskBX73h1GyYvmtkyuL7Uq0N+y+RTOmd2fwDw48gM5FEq6DNpVVW"
-										 "ZRIzzoMSLZCB+tg1eQZdGKtmctdd5Jjhwihf9Aa759fcj60GDG39G6A/w4Jok+J6"
-										 "7sRabxxontJ4Kpo6zmwUKbWF8naJeCRTO0VAYLkJqEWO4VJTIHJeu2WpxM0qzvY9"
-										 "IY5Yd7Njegu64FoHU55dSfee2KwDa0/bajrknJfxWBN4hk/rqgGjxQmzAYMCB7/p"
-										 "/9Snfg4NmfX5cJJ01SNzY6Q/mJRjB3iX2PBz+GsCAwEAAaM4MDYwDAYDVR0TAQH/"
-										 "BAIwADAOBgNVHQ8BAf8EBAMCB4AwFgYDVR0lAQH/BAwwCgYIKwYBBQUHAwIwDQYJ"
-										 "KoZIhvcNAQEFBQADggEBAKCSq0D+NIAsGULZrhXouurxInxDyq03xLNcxvKDQchc"
-										 "XfGA1r3eltmlyKQb5TmAsuKwS/LAQ5z8SlRTOmDGVEtDwnw3S83C4ufXbP0eMB6H"
-										 "eKf2XCA00T3odUfXmQZme8hG6z7GKVOdn/0oY+vaX38brlCpRXDTm1WldyddUpMz"
-										 "ftcs6dibdnbQtbX6o9E+KuvGHoNW5xcSjX8lwXTpopfvufPOLPcnFXi4UoYZ8NZ2"
-										 "2mRG78LkOA+SkOMutbt6w7TBDvADmFzuzvAULy4gsfcamOYcQ7uiHnnD+PoNiNbw"
-										 "flE/m/0zymX8I/Xu3+KKLhUnUROGC6zO3OnLHXCnEns=";
-	std::string sample_cert_pubkey = R"(-----BEGIN PUBLIC KEY-----
+std::string sample_cert_base64_der =
+    "MIIDHDCCAgSgAwIBAgIIGlbUz5cvweUwDQYJKoZIhvcNAQEFBQAwMTEvMC0GA1UE"
+    "AxMmc2VjdXJldG9rZW4uc3lzdGVtLmdzZXJ2aWNlYWNjb3VudC5jb20wHhcNMTkw"
+    "NDEwMjEyMDUxWhcNMTkwNDI3MDkzNTUxWjAxMS8wLQYDVQQDEyZzZWN1cmV0b2tl"
+    "bi5zeXN0ZW0uZ3NlcnZpY2VhY2NvdW50LmNvbTCCASIwDQYJKoZIhvcNAQEBBQAD"
+    "ggEPADCCAQoCggEBALRPFSsUi/bGcMVkD+XjJ6z/71u+7Wn1C1bRnM9sU3q7+Ere"
+    "DV6an+z+YsjblskBX73h1GyYvmtkyuL7Uq0N+y+RTOmd2fwDw48gM5FEq6DNpVVW"
+    "ZRIzzoMSLZCB+tg1eQZdGKtmctdd5Jjhwihf9Aa759fcj60GDG39G6A/w4Jok+J6"
+    "7sRabxxontJ4Kpo6zmwUKbWF8naJeCRTO0VAYLkJqEWO4VJTIHJeu2WpxM0qzvY9"
+    "IY5Yd7Njegu64FoHU55dSfee2KwDa0/bajrknJfxWBN4hk/rqgGjxQmzAYMCB7/p"
+    "/9Snfg4NmfX5cJJ01SNzY6Q/mJRjB3iX2PBz+GsCAwEAAaM4MDYwDAYDVR0TAQH/"
+    "BAIwADAOBgNVHQ8BAf8EBAMCB4AwFgYDVR0lAQH/BAwwCgYIKwYBBQUHAwIwDQYJ"
+    "KoZIhvcNAQEFBQADggEBAKCSq0D+NIAsGULZrhXouurxInxDyq03xLNcxvKDQchc"
+    "XfGA1r3eltmlyKQb5TmAsuKwS/LAQ5z8SlRTOmDGVEtDwnw3S83C4ufXbP0eMB6H"
+    "eKf2XCA00T3odUfXmQZme8hG6z7GKVOdn/0oY+vaX38brlCpRXDTm1WldyddUpMz"
+    "ftcs6dibdnbQtbX6o9E+KuvGHoNW5xcSjX8lwXTpopfvufPOLPcnFXi4UoYZ8NZ2"
+    "2mRG78LkOA+SkOMutbt6w7TBDvADmFzuzvAULy4gsfcamOYcQ7uiHnnD+PoNiNbw"
+    "flE/m/0zymX8I/Xu3+KKLhUnUROGC6zO3OnLHXCnEns=";
+std::string sample_cert_pubkey = R"(-----BEGIN PUBLIC KEY-----
 MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtE8VKxSL9sZwxWQP5eMn
 rP/vW77tafULVtGcz2xTerv4St4NXpqf7P5iyNuWyQFfveHUbJi+a2TK4vtSrQ37
 L5FM6Z3Z/APDjyAzkUSroM2lVVZlEjPOgxItkIH62DV5Bl0Yq2Zy113kmOHCKF/0

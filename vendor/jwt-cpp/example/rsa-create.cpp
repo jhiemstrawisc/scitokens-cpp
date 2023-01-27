@@ -2,7 +2,7 @@
 #include <jwt-cpp/jwt.h>
 
 int main() {
-	std::string rsa_priv_key = R"(-----BEGIN PRIVATE KEY-----
+  std::string rsa_priv_key = R"(-----BEGIN PRIVATE KEY-----
 MIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQC4ZtdaIrd1BPIJ
 tfnF0TjIK5inQAXZ3XlCrUlJdP+XHwIRxdv1FsN12XyMYO/6ymLmo9ryoQeIrsXB
 XYqlET3zfAY+diwCb0HEsVvhisthwMU4gZQu6TYW2s9LnXZB5rVtcBK69hcSlA2k
@@ -31,14 +31,15 @@ vkSpADK6VPn9lbqq7O8cTedEHttm6otmLt8ZyEl3hZMaL3hbuRj6ysjmoFKx6CrX
 rK0/Ikt5ybqUzKCMJZg2VKGTxg==
 -----END PRIVATE KEY-----)";
 
-	auto token = jwt::create()
-					 .set_issuer("auth0")
-					 .set_type("JWT")
-					 .set_id("rsa-create-example")
-					 .set_issued_at(std::chrono::system_clock::now())
-					 .set_expires_at(std::chrono::system_clock::now() + std::chrono::seconds{36000})
-					 .set_payload_claim("sample", jwt::claim(std::string{"test"}))
-					 .sign(jwt::algorithm::rs256("", rsa_priv_key, "", ""));
+  auto token = jwt::create()
+                   .set_issuer("auth0")
+                   .set_type("JWT")
+                   .set_id("rsa-create-example")
+                   .set_issued_at(std::chrono::system_clock::now())
+                   .set_expires_at(std::chrono::system_clock::now() +
+                                   std::chrono::seconds{36000})
+                   .set_payload_claim("sample", jwt::claim(std::string{"test"}))
+                   .sign(jwt::algorithm::rs256("", rsa_priv_key, "", ""));
 
-	std::cout << "token:\n" << token << std::endl;
+  std::cout << "token:\n" << token << std::endl;
 }
