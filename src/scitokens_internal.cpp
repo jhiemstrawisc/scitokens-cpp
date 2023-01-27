@@ -23,6 +23,25 @@ using namespace scitokens;
 
 namespace {
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
 struct CurlRaii {
 
   CurlRaii() { curl_global_init(CURL_GLOBAL_DEFAULT); }
