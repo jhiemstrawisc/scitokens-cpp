@@ -5,10 +5,9 @@ on:
   # but only for the main branch
   push:
     branches:
-      - linter
   pull_request:
     branches:
-      - main
+      - master
 
 jobs:
   run-linters:
@@ -30,4 +29,6 @@ jobs:
           clang_format_auto_fix: true
           auto_fix: true
           commit: true
-          continue_on_error: true
+          continue_on_error: false
+
+
