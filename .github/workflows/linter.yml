@@ -7,7 +7,7 @@ on:
     branches:
   pull_request:
     branches:
-      - master
+      - linter_merge
 
 jobs:
   run-linters:
