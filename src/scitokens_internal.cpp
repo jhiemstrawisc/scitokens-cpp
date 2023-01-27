@@ -21,23 +21,6 @@
 
 using namespace scitokens;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 namespace {
 
 struct CurlRaii {
