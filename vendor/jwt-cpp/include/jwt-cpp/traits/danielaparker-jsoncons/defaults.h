@@ -22,14 +22,15 @@ using claim = basic_claim<traits::danielaparker_jsoncons>;
  * \return verifier instance
  */
 inline verifier<default_clock, traits::danielaparker_jsoncons> verify() {
-  return verify<default_clock, traits::danielaparker_jsoncons>(default_clock{});
+    return verify<default_clock, traits::danielaparker_jsoncons>(
+        default_clock{});
 }
 
 /**
  * Return a builder instance to create a new token
  */
 inline builder<traits::danielaparker_jsoncons> create() {
-  return builder<traits::danielaparker_jsoncons>();
+    return builder<traits::danielaparker_jsoncons>();
 }
 
 #ifndef JWT_DISABLE_BASE64
@@ -42,7 +43,7 @@ inline builder<traits::danielaparker_jsoncons> create() {
  */
 inline decoded_jwt<traits::danielaparker_jsoncons>
 decode(const std::string &token) {
-  return decoded_jwt<traits::danielaparker_jsoncons>(token);
+    return decoded_jwt<traits::danielaparker_jsoncons>(token);
 }
 #endif
 
@@ -60,7 +61,7 @@ decode(const std::string &token) {
 template <typename Decode>
 decoded_jwt<traits::danielaparker_jsoncons> decode(const std::string &token,
                                                    Decode decode) {
-  return decoded_jwt<traits::danielaparker_jsoncons>(token, decode);
+    return decoded_jwt<traits::danielaparker_jsoncons>(token, decode);
 }
 
 /**
@@ -71,7 +72,7 @@ decoded_jwt<traits::danielaparker_jsoncons> decode(const std::string &token,
  */
 inline jwk<traits::danielaparker_jsoncons>
 parse_jwk(const traits::danielaparker_jsoncons::string_type &token) {
-  return jwk<traits::danielaparker_jsoncons>(token);
+    return jwk<traits::danielaparker_jsoncons>(token);
 }
 
 /**
@@ -82,7 +83,7 @@ parse_jwk(const traits::danielaparker_jsoncons::string_type &token) {
  */
 inline jwks<traits::danielaparker_jsoncons>
 parse_jwks(const traits::danielaparker_jsoncons::string_type &token) {
-  return jwks<traits::danielaparker_jsoncons>(token);
+    return jwks<traits::danielaparker_jsoncons>(token);
 }
 } // namespace jwt
 

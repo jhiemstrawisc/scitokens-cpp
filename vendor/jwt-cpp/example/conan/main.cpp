@@ -4,18 +4,21 @@
 
 int main() {
 
-  std::string token =
-      "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9."
-      "eyJpc3MiOiJPbmxpbmUgSldUIEJ1aWxkZXIiLCJpYXQiOjE2MTAwMjMxNzcsImV4cCI6MTY0"
-      "MTU1OTE3NywiYXVkIjoid3"
-      "d3LmV4YW1wbGUuY29tIiwic3ViIjoianJvY2tldEBleGFtcGxlLmNvbSIsIkdpdmVuTmFtZS"
-      "I6IkpvaG5ueSIsIlN1cm5h"
-      "bWUiOiJSb2NrZXQiLCJFbWFpbCI6Impyb2NrZXRAZXhhbXBsZS5jb20iLCJSb2xlIjpbIk1h"
-      "bmFnZXIiLCJQcm9qZWN0IE"
-      "FkbWluaXN0cmF0b3IiXX0.5EOfHnBmpdPvRHAuVDttgJQvbFuGEF7fC4uBSXAGg6c";
+    std::string token =
+        "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9."
+        "eyJpc3MiOiJPbmxpbmUgSldUIEJ1aWxkZXIiLCJpYXQiOjE2MTAwMjMxNzcsImV4cCI6MT"
+        "Y0"
+        "MTU1OTE3NywiYXVkIjoid3"
+        "d3LmV4YW1wbGUuY29tIiwic3ViIjoianJvY2tldEBleGFtcGxlLmNvbSIsIkdpdmVuTmFt"
+        "ZS"
+        "I6IkpvaG5ueSIsIlN1cm5h"
+        "bWUiOiJSb2NrZXQiLCJFbWFpbCI6Impyb2NrZXRAZXhhbXBsZS5jb20iLCJSb2xlIjpbIk"
+        "1h"
+        "bmFnZXIiLCJQcm9qZWN0IE"
+        "FkbWluaXN0cmF0b3IiXX0.5EOfHnBmpdPvRHAuVDttgJQvbFuGEF7fC4uBSXAGg6c";
 
-  auto decoded = jwt::decode(token);
+    auto decoded = jwt::decode(token);
 
-  for (auto &e : decoded.get_payload_claims())
-    std::cout << e.first << " = " << e.second << std::endl;
+    for (auto &e : decoded.get_payload_claims())
+        std::cout << e.first << " = " << e.second << std::endl;
 }

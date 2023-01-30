@@ -18,14 +18,14 @@ using claim = basic_claim<traits::kazuho_picojson>;
  * \return verifier instance
  */
 inline verifier<default_clock, traits::kazuho_picojson> verify() {
-  return verify<default_clock, traits::kazuho_picojson>(default_clock{});
+    return verify<default_clock, traits::kazuho_picojson>(default_clock{});
 }
 
 /**
  * Return a builder instance to create a new token
  */
 inline builder<traits::kazuho_picojson> create() {
-  return builder<traits::kazuho_picojson>();
+    return builder<traits::kazuho_picojson>();
 }
 
 #ifndef JWT_DISABLE_BASE64
@@ -37,7 +37,7 @@ inline builder<traits::kazuho_picojson> create() {
  * \throw std::runtime_error Base64 decoding failed or invalid json
  */
 inline decoded_jwt<traits::kazuho_picojson> decode(const std::string &token) {
-  return decoded_jwt<traits::kazuho_picojson>(token);
+    return decoded_jwt<traits::kazuho_picojson>(token);
 }
 #endif
 
@@ -55,7 +55,7 @@ inline decoded_jwt<traits::kazuho_picojson> decode(const std::string &token) {
 template <typename Decode>
 decoded_jwt<traits::kazuho_picojson> decode(const std::string &token,
                                             Decode decode) {
-  return decoded_jwt<traits::kazuho_picojson>(token, decode);
+    return decoded_jwt<traits::kazuho_picojson>(token, decode);
 }
 
 /**
@@ -66,7 +66,7 @@ decoded_jwt<traits::kazuho_picojson> decode(const std::string &token,
  */
 inline jwk<traits::kazuho_picojson>
 parse_jwk(const traits::kazuho_picojson::string_type &token) {
-  return jwk<traits::kazuho_picojson>(token);
+    return jwk<traits::kazuho_picojson>(token);
 }
 
 /**
@@ -77,7 +77,7 @@ parse_jwk(const traits::kazuho_picojson::string_type &token) {
  */
 inline jwks<traits::kazuho_picojson>
 parse_jwks(const traits::kazuho_picojson::string_type &token) {
-  return jwks<traits::kazuho_picojson>(token);
+    return jwks<traits::kazuho_picojson>(token);
 }
 } // namespace jwt
 

@@ -22,8 +22,8 @@ typedef void *SciTokenStatus;
 
 typedef int (*StringValidatorFunction)(const char *value, char **err_msg);
 typedef struct Acl_s {
-  const char *authz;
-  const char *resource;
+    const char *authz;
+    const char *resource;
 } Acl;
 
 /**
@@ -37,11 +37,11 @@ typedef struct Acl_s {
  * profiles. No automatic translation is performed.
  */
 typedef enum _profile {
-  COMPAT = 0,
-  SCITOKENS_1_0,
-  SCITOKENS_2_0,
-  WLCG_1_0,
-  AT_JWT
+    COMPAT = 0,
+    SCITOKENS_1_0,
+    SCITOKENS_2_0,
+    WLCG_1_0,
+    AT_JWT
 } SciTokenProfile;
 
 SciTokenKey scitoken_key_create(const char *key_id, const char *algorithm,

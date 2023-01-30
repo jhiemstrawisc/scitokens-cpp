@@ -22,14 +22,14 @@ using claim = basic_claim<traits::nlohmann_json>;
  * \return verifier instance
  */
 inline verifier<default_clock, traits::nlohmann_json> verify() {
-  return verify<default_clock, traits::nlohmann_json>(default_clock{});
+    return verify<default_clock, traits::nlohmann_json>(default_clock{});
 }
 
 /**
  * Return a builder instance to create a new token
  */
 inline builder<traits::nlohmann_json> create() {
-  return builder<traits::nlohmann_json>();
+    return builder<traits::nlohmann_json>();
 }
 
 #ifndef JWT_DISABLE_BASE64
@@ -41,7 +41,7 @@ inline builder<traits::nlohmann_json> create() {
  * \throw std::runtime_error Base64 decoding failed or invalid json
  */
 inline decoded_jwt<traits::nlohmann_json> decode(const std::string &token) {
-  return decoded_jwt<traits::nlohmann_json>(token);
+    return decoded_jwt<traits::nlohmann_json>(token);
 }
 #endif
 
@@ -59,7 +59,7 @@ inline decoded_jwt<traits::nlohmann_json> decode(const std::string &token) {
 template <typename Decode>
 decoded_jwt<traits::nlohmann_json> decode(const std::string &token,
                                           Decode decode) {
-  return decoded_jwt<traits::nlohmann_json>(token, decode);
+    return decoded_jwt<traits::nlohmann_json>(token, decode);
 }
 
 /**
@@ -70,7 +70,7 @@ decoded_jwt<traits::nlohmann_json> decode(const std::string &token,
  */
 inline jwk<traits::nlohmann_json>
 parse_jwk(const traits::nlohmann_json::string_type &token) {
-  return jwk<traits::nlohmann_json>(token);
+    return jwk<traits::nlohmann_json>(token);
 }
 
 /**
@@ -81,7 +81,7 @@ parse_jwk(const traits::nlohmann_json::string_type &token) {
  */
 inline jwks<traits::nlohmann_json>
 parse_jwks(const traits::nlohmann_json::string_type &token) {
-  return jwks<traits::nlohmann_json>(token);
+    return jwks<traits::nlohmann_json>(token);
 }
 } // namespace jwt
 

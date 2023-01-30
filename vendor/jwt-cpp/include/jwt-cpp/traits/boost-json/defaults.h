@@ -22,14 +22,14 @@ using claim = basic_claim<traits::boost_json>;
  * \return verifier instance
  */
 inline verifier<default_clock, traits::boost_json> verify() {
-  return verify<default_clock, traits::boost_json>(default_clock{});
+    return verify<default_clock, traits::boost_json>(default_clock{});
 }
 
 /**
  * Return a builder instance to create a new token
  */
 inline builder<traits::boost_json> create() {
-  return builder<traits::boost_json>();
+    return builder<traits::boost_json>();
 }
 
 #ifndef JWT_DISABLE_BASE64
@@ -41,7 +41,7 @@ inline builder<traits::boost_json> create() {
  * \throw std::runtime_error Base64 decoding failed or invalid json
  */
 inline decoded_jwt<traits::boost_json> decode(const std::string &token) {
-  return decoded_jwt<traits::boost_json>(token);
+    return decoded_jwt<traits::boost_json>(token);
 }
 #endif
 
@@ -59,7 +59,7 @@ inline decoded_jwt<traits::boost_json> decode(const std::string &token) {
 template <typename Decode>
 decoded_jwt<traits::boost_json> decode(const std::string &token,
                                        Decode decode) {
-  return decoded_jwt<traits::boost_json>(token, decode);
+    return decoded_jwt<traits::boost_json>(token, decode);
 }
 
 /**
@@ -70,7 +70,7 @@ decoded_jwt<traits::boost_json> decode(const std::string &token,
  */
 inline jwk<traits::boost_json>
 parse_jwk(const traits::boost_json::string_type &token) {
-  return jwk<traits::boost_json>(token);
+    return jwk<traits::boost_json>(token);
 }
 
 /**
@@ -81,7 +81,7 @@ parse_jwk(const traits::boost_json::string_type &token) {
  */
 inline jwks<traits::boost_json>
 parse_jwks(const traits::boost_json::string_type &token) {
-  return jwks<traits::boost_json>(token);
+    return jwks<traits::boost_json>(token);
 }
 } // namespace jwt
 
