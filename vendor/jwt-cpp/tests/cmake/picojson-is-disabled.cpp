@@ -5,6 +5,6 @@
 #include "jwt-cpp/jwt.h"
 
 int main() {
-	jwt::date date;
-	return 0;
+    jwt::date date;
+    return 0;
 }

@@ -7,7 +7,7 @@
 #include "jwt-cpp/jwt.h"
 
 int main() {
-	tls_init();
-	jwt::date date;
-	return 0;
+    tls_init();
+    jwt::date date;
+    return 0;
 }

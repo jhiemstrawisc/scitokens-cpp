@@ -2,7 +2,7 @@
 #include <gtest/gtest.h>
 
 TEST(JwksTest, OneKeyParse) {
-	std::string public_key = R"({
+    std::string public_key = R"({
     "alg": "RS256",
     "kty": "RSA",
     "use": "sig",
@@ -14,22 +14,23 @@ TEST(JwksTest, OneKeyParse) {
     "kid": "123456789",
     "x5t": "NjVBRjY5MDlCMUIwNzU4RTA2QzZFMDQ4QzQ2MDAyQjVDNjk1RTM2Qg"
   })";
-	ASSERT_THROW(jwt::parse_jwk("__not_json__"), jwt::error::invalid_json_exception);
-	ASSERT_THROW(jwt::parse_jwk(R"##(["not","an","object"])##"), std::bad_cast);
+    ASSERT_THROW(jwt::parse_jwk("__not_json__"),
+                 jwt::error::invalid_json_exception);
+    ASSERT_THROW(jwt::parse_jwk(R"##(["not","an","object"])##"), std::bad_cast);
 
-	auto jwk = jwt::parse_jwk(public_key);
+    auto jwk = jwt::parse_jwk(public_key);
 
-	ASSERT_TRUE(jwk.has_algorithm());
-	ASSERT_TRUE(jwk.has_key_id());
-	ASSERT_TRUE(jwk.has_x5c());
-	ASSERT_FALSE(jwk.has_jwk_claim("foo"));
+    ASSERT_TRUE(jwk.has_algorithm());
+    ASSERT_TRUE(jwk.has_key_id());
+    ASSERT_TRUE(jwk.has_x5c());
+    ASSERT_FALSE(jwk.has_jwk_claim("foo"));
 
-	ASSERT_EQ("RS256", jwk.get_algorithm());
-	ASSERT_EQ("123456789", jwk.get_key_id());
+    ASSERT_EQ("RS256", jwk.get_algorithm());
+    ASSERT_EQ("123456789", jwk.get_key_id());
 }
 
 TEST(JwksTest, MultiKeysParse) {
-	std::string public_key = R"({
+    std::string public_key = R"({
 	"keys": [{
 			"kid": "internal-gateway-jwt",
 			"use": "sig",
@@ -52,22 +53,23 @@ TEST(JwksTest, MultiKeysParse) {
 		}
 	]
 })";
-	auto jwks = jwt::parse_jwks(public_key);
-	auto jwk = jwks.get_jwk("internal-gateway-jwt");
+    auto jwks = jwt::parse_jwks(public_key);
+    auto jwk = jwks.get_jwk("internal-gateway-jwt");
 
-	ASSERT_TRUE(jwk.has_algorithm());
-	ASSERT_TRUE(jwk.has_key_id());
-	ASSERT_TRUE(jwk.has_x5c());
-	ASSERT_FALSE(jwk.has_jwk_claim("foo"));
+    ASSERT_TRUE(jwk.has_algorithm());
+    ASSERT_TRUE(jwk.has_key_id());
+    ASSERT_TRUE(jwk.has_x5c());
+    ASSERT_FALSE(jwk.has_jwk_claim("foo"));
 
-	ASSERT_EQ("RS256", jwk.get_algorithm());
-	ASSERT_EQ("internal-gateway-jwt", jwk.get_key_id());
+    ASSERT_EQ("RS256", jwk.get_algorithm());
+    ASSERT_EQ("internal-gateway-jwt", jwk.get_key_id());
 
-	ASSERT_THROW(jwks.get_jwk("123456"), jwt::error::claim_not_present_exception);
+    ASSERT_THROW(jwks.get_jwk("123456"),
+                 jwt::error::claim_not_present_exception);
 }
 
 TEST(JwksTest, Missingx5c) {
-	std::string public_key = R"({
+    std::string public_key = R"({
 	"keys": [{
 			"kid": "internal-gateway-jwt",
 			"use": "sig",
@@ -99,20 +101,21 @@ TEST(JwksTest, Missingx5c) {
 	]
 })";
 
-	auto jwks = jwt::parse_jwks(public_key);
-	ASSERT_TRUE(jwks.has_jwk("internal-gateway-jwt"));
-	ASSERT_FALSE(jwks.has_jwk("random-jwt"));
-	auto jwk = jwks.get_jwk("internal-gateway-jwt");
+    auto jwks = jwt::parse_jwks(public_key);
+    ASSERT_TRUE(jwks.has_jwk("internal-gateway-jwt"));
+    ASSERT_FALSE(jwks.has_jwk("random-jwt"));
+    auto jwk = jwks.get_jwk("internal-gateway-jwt");
 
-	ASSERT_TRUE(jwk.has_algorithm());
-	ASSERT_THROW(jwk.get_x5c(), jwt::error::claim_not_present_exception);
+    ASSERT_TRUE(jwk.has_algorithm());
+    ASSERT_THROW(jwk.get_x5c(), jwt::error::claim_not_present_exception);
 
-	auto jwk2 = jwks.get_jwk("internal-0");
+    auto jwk2 = jwks.get_jwk("internal-0");
 
-	ASSERT_EQ(jwk2.get_x5c().size(), 0);
-	ASSERT_THROW(jwk2.get_x5c_key_value(), jwt::error::claim_not_present_exception);
+    ASSERT_EQ(jwk2.get_x5c().size(), 0);
+    ASSERT_THROW(jwk2.get_x5c_key_value(),
+                 jwt::error::claim_not_present_exception);
 
-	auto jwk3 = jwks.get_jwk("internal-1");
-	ASSERT_EQ(jwk3.get_x5c().size(), 3);
-	ASSERT_EQ(jwk3.get_x5c_key_value(), "1");
+    auto jwk3 = jwks.get_jwk("internal-1");
+    ASSERT_EQ(jwk3.get_x5c().size(), 3);
+    ASSERT_EQ(jwk3.get_x5c_key_value(), "1");
 }

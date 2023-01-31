@@ -15,7 +15,7 @@
 #include <wolfssl/ssl.h>
 
 int main() {
-	wolfSSL_library_init();
-	jwt::date date;
-	return 0;
+    wolfSSL_library_init();
+    jwt::date date;
+    return 0;
 }
