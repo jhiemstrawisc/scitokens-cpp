@@ -294,7 +294,8 @@ int keycache_set_jwks(const char *issuer, const char *jwks, char **err_msg);
  * APIs for managing scitokens configuration parameters.
  */
 
-// On its way to deprecation
+// On its way to deprecation. Attribute added to warn when used at compilation.
+[[deprecated("This API is soon to be deprecated. Please use the `scitoken_`-prefixed version in its place.")]]
 int config_set_int(const char *key, int value, char **err_msg);
 
 /**
@@ -305,7 +306,8 @@ int config_set_int(const char *key, int value, char **err_msg);
  */
 int scitoken_config_set_int(const char *key, int value, char **err_msg);
 
-// on its way to deprecation
+// On its way to deprecation. Attribute added to warn when used at compilation.
+[[deprecated("This API is soon to be deprecated. Please use the `scitoken_`-prefixed version in its place.")]]
 int config_get_int(const char *key, char **err_msg);
 
 /**
