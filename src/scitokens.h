@@ -14,6 +14,22 @@ extern "C" {
 #include <time.h>
 #endif
 
+// Set up a wrapper to warn of soon-to-be-deprecated functions
+#if __cplusplus >= 201402L
+    #if defined(__has_cpp_attribute)
+        #if __has_cpp_attribute(deprecated)
+            #define DEPRECATION_WARNING(msg, func) [[deprecated(msg)]] func
+        #endif
+    #endif
+// For everyone else
+#else
+    #ifdef __GNUC__
+        #define DEPRECATION_WARNING(msg, func) func __attribute__ ((deprecated(msg)))
+    #elif defined(_MSC_VER)
+        #define DEPRECATION_WARNING(msg, func) __declspec(deprecated(msg)) func
+    #endif
+#endif
+
 typedef void *SciTokenKey;
 typedef void *SciToken;
 typedef void *Validator;
@@ -294,9 +310,9 @@ int keycache_set_jwks(const char *issuer, const char *jwks, char **err_msg);
  * APIs for managing scitokens configuration parameters.
  */
 
-// On its way to deprecation. Attribute added to warn when used at compilation.
-[[deprecated("This API is soon to be deprecated. Please use the `scitoken_`-prefixed version in its place.")]]
-int config_set_int(const char *key, int value, char **err_msg);
+
+// On its way to deprecation. Pragma added internally to warn when used at compilation.
+DEPRECATION_WARNING("Use scitoken_ prefixed version instead", int config_set_int(const char *key, int value, char **err_msg));
 
 /**
  * Update scitokens int parameters.
@@ -306,9 +322,8 @@ int config_set_int(const char *key, int value, char **err_msg);
  */
 int scitoken_config_set_int(const char *key, int value, char **err_msg);
 
-// On its way to deprecation. Attribute added to warn when used at compilation.
-[[deprecated("This API is soon to be deprecated. Please use the `scitoken_`-prefixed version in its place.")]]
-int config_get_int(const char *key, char **err_msg);
+// On its way to deprecation. Pragma added internally to warn when used at compilation.
+DEPRECATION_WARNING("Use scitoken_ prefixed version instead", int config_get_int(const char *key, char **err_msg));
 
 /**
  * Get current scitokens int parameters.
